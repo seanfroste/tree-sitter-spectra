@@ -1,0 +1,8 @@
+.superpowers/
+node_modules/
+build/
+*.dll
+*.dylib
+*.so
+*.wasm
+.DS_Store

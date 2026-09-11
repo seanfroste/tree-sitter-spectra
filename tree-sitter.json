@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "spectra",
+      "camelcase": "SPECTRA",
+      "scope": "source.spectra",
+      "path": ".",
+      "file-types": [
+        "in"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "UNLICENSED",
+    "description": "Tree-sitter grammar for the SPECTRA input language",
+    "authors": [
+      {
+        "name": "seanfroste"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/seanfroste/tree-sitter-spectra"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

@@ -1,0 +1,23 @@
+==================
+Empty source
+==================
+
+---
+
+(source_file)
+
+==================
+Title and end
+==================
+
+TITLE Example
+END
+
+---
+
+(source_file
+  (title_statement
+    name: (statement_name)
+    title: (title_text))
+  (end_statement
+    name: (statement_name)))

@@ -1,0 +1,36 @@
+{
+  "name": "tree-sitter-spectra",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for the SPECTRA input language",
+  "license": "UNLICENSED",
+  "author": "seanfroste",
+  "type": "module",
+  "repository": "github:seanfroste/tree-sitter-spectra",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate --abi 15",
+    "test": "tree-sitter test"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.27.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.spectra",
+      "file-types": ["in"],
+      "highlights": "queries/highlights.scm"
+    }
+  ]
+}
