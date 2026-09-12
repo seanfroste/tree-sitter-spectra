@@ -1,0 +1,168 @@
+==================
+Documented syntax families
+==================
+# whole-row comment
+TITLE Device μ test
+DEFINE NAME=Width VALUE={@Base+1.5} CHARACTER="Gate width"
+DOPE XMIN=0 XMAX=10 PROFILE=Gaussian MASK=POLYGON(0,0 10,0 10,5)
+SAVE FILE=test-{@Width}-1.txt TYPE=DATA TSTEP=(0, 5, 10)
+IF [@Width <= 5E16]
+  ELECTRODE XMIN=0 XMAX=5 V=0
+ELSE
+  ELECTRODE XMIN=0 XMAX=5 V=5
+ENDIF
+END
+
+---
+
+(source_file
+  (comment)
+  (title_statement
+    (statement_name)
+    (title_text))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (character_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (braced_expression
+        (variable_reference)
+        (expression_operator)
+        (numeric_value)))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (quoted_string)))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (character_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (function_call
+        (function_name)
+        (argument_list
+          (numeric_value)
+          (numeric_value)
+          (numeric_value)
+          (numeric_value)
+          (numeric_value)
+          (numeric_value)))))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (composite_value
+        (character_fragment)
+        (braced_expression
+          (variable_reference))
+        (character_fragment)))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (character_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (parenthesized_series
+        (numeric_value)
+        (numeric_value)
+        (numeric_value))))
+  (if_statement
+    (statement_name)
+    (condition
+      (variable_reference)
+      (expression_operator)
+      (numeric_value)))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value)))
+  (else_statement
+    (statement_name))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value)))
+  (endif_statement
+    (statement_name))
+  (end_statement
+    (statement_name)))
+
+==================
+Case insensitive names and separators
+==================
+substrate type = p, conc=2e15 v = -0.25
+GRID XMIN=0 YMIN=0 XMAX=.5 YMAX=1.0
+
+---
+
+(source_file
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (character_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value)))
+  (statement
+    (statement_name)
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))
+    (parameter
+      (parameter_name)
+      (assignment_operator)
+      (numeric_value))))
