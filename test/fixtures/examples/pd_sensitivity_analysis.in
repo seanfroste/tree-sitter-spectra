@@ -1,0 +1,38 @@
+TITLE PD Sensitivity Analysis
+define name=Power value=(1E-6 1E-5 1E-4 1E-3)
+SUBS TYPE=P CONC=2E15, VSUB=0
+GRID GRATE=1, XMI=0 XMA=5 SPACE=40
+GRID GRATE=1, YMI=0 YMA=5 SPACE=40
+GRID GRATE=1, ZMI=-0.4 ZMA=-0.05 SPACE=7
+GRID GRATE=1, ZMI=-0.05 ZMA=0 SPACE=5
+GRID GRATE=70, ZMI=0.0 ZMA=8 SPACE=20
+STRUCT XBOUND=P, YBOUND=P, XMAX=5.0, YMAX=5, ZMAX=8, ZMIN=-0.4
+light lambda=550 xmin=2.5 xmax=4.75 ymin=0.25 ymax=4.75 power=@Power
+CONV ca=2
+$ LOCOS
+REGION MATERIAL=LOCOS ZMIN=-0.2 ZMAX=0.2 BEAK=0.2 name=LOCOS
+MASK=POLY(0.25,0.25 1.25,0.25 1.25,3.75 2.5,3.75 2.5,0.25 4.75,0.25
+4.75,4.75 0.25,4.75)
+$
+$ DOPE and Gate Electrode statements are omitted
+$
+*
+* electrode
+*
+ELEC XMI=3.5 YMI=2.5 XMA=3.5 YMA=2.5 ZMI=0.25 ZMA=0.25 V=1 name=pd
+ELEC XMI=0.75 YMI=4.5 XMA=0.75 YMA=4.5 ZMI=0 ZMA=0 V=3.3 name=fd
+ELEC XMI=0.75 YMI=2.875 XMA=0.75 YMA=2.875 ZMI=0 ZMA=0 V=3.3 name=dd
+ELEC XMI=0.75 YMI=2 XMA=0.75 YMA=2 ZMI=0 ZMA=0 V=3.3 name=dif
+ELEC XMI=0.75 YMI=0.625 XMA=0.75 YMA=0.625 ZMI=0 ZMA=0 V=3.3 name=out
+$ Fermi Level
+$ Drain
+NFERMI XMI=0, YMI=0, ZMI=0, XMA=5, YMA=5, ZMA=8, V=3.3
+$ PD
+NFERMI XMI=2.25 YMI=0.0 ZMI=0.0 XMA=5.0 YMA=5 ZMA=2.0 V=1 NAME=PD
+$ P-Fermi Level
+PFERMI XMI=0, YMI=0, ZMI=0, XMA=5, YMA=5, ZMA=8, V=0
+bias ename=pd error={@Power*1e-10} float=n nstep=10 vstep=0.2
+*
+EXTRACT para=@Power para=VE ename=pd para=nc ename=pd
+para=elec xmin=2.5 zmax=1 file=sat-1.0.nc
+END
