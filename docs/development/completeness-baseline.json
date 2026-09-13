@@ -1,0 +1,592 @@
+{
+  "kind": "historical-structural-screening-not-semantic-coverage",
+  "date": "2026-09-13",
+  "baseline_commit": "fc7276efec0be7715e14bb347b4b180dbf36df04",
+  "toolchain": "Tree-sitter CLI 0.27.0, ABI 15",
+  "interpretation": "Pass means only no ERROR, MISSING or unparsed_line in a single fresh parse. It is not a semantic recognition assertion. Inputs retain apparent transcription defects, apart from explicit presentation/prose normalization. Every input was parsed with an appended LF.",
+  "source_sha256": {
+    "docs/00-Input-File-Format.md": "790f19a352c6934ed75582ba64a2356e5efa870d9f33520c199c2e116585d47f",
+    "docs/BIAS.md": "22887732622bd3106838cf057d7424b19b698ffc2cf5e7b079a2042cc47df0da",
+    "docs/CONSTANT.md": "13295053113976835a8924abcf8271e26cd8f7601f0202fe6cfad0b9dcfe5f15",
+    "docs/CONVERGENCE.md": "b16b743154011a17cf7aa98f5ff165e8bf07a605340e3c53b6fa3d712e367963",
+    "docs/DEFINE.md": "8d90c1f36338f2dc9357622103a37b1f9ab7b0e7a9781f4a523d90c73b62a6ac",
+    "docs/DEPOSIT.md": "36740fd5fd1b62ad2409a7052141ebc9650c7066ad1edba22e892e38c5a0c882",
+    "docs/DOPE.md": "654c21c7067b71df12bca49d629bdc2a1c8f9e78b5966b6e0388f6332c7ffd80",
+    "docs/ELECTRODE.md": "2dfd82424d50ba5bd61deea7097794c2fa0c142e792867fdd26a612b9c0fe387",
+    "docs/END.md": "828f22fa186a51eb1f3592e3aededc198ace25d51b49f561bfa4b6662703418f",
+    "docs/EXTRACT.md": "5aa7097b014151eafb28c3fea0c753a5cb7b31fb08b9ab59e5fa24346dc93e15",
+    "docs/GRID.md": "6ad811f63b2e2fd7b1c5be736ca1d32561690a54eb9b818df3b3e7121246ecb6",
+    "docs/IF-ELSE-ENDIF.md": "751e579e5f6bc41c0a68a1c51e9c717663a119af491dff0421ca8b0951da2e95",
+    "docs/INSERT.md": "385cf72f746d471d8284de124e971f0a997426431e521f70e50ce9d1123cadcd",
+    "docs/INTERFACE.md": "30c9bb0977e5b3fc5d0f1cba7321b356aabcbca58e311545252ee44ac5f149d8",
+    "docs/LIGHT.md": "e4bd2582fe0b22abbb6b7fb13fa6368eeb22c1ca622ecfef39509129ab962977",
+    "docs/MODEL.md": "17aa4992792a7d3449ebcece105a66fdf7068b564789c6ccc65eab2a831d7a48",
+    "docs/NFERMI.md": "9f6a89de3bfc69d2e0faf494656d5b33bcd9e6eb6081bd382fc845de081d2680",
+    "docs/PFERMI.md": "60d69643b8b2e329b7a0671a311d41ba0ad7eae78ffb84acccf4fe09547930d1",
+    "docs/REGION.md": "d50f1ba21846442d534bcc432f6ad545ce0e234134844f8e94c136688d817185",
+    "docs/RESTART.md": "f0fb62e361bf33c4a1d500b6d3506caff546f90699761d2d63c62d840ca1d5a7",
+    "docs/SAVE.md": "b96a39208dbdc2689c8acc165c142867864129367c8969c5b12d5e165d92b23f",
+    "docs/STRUCTURE.md": "b6d496490bfb1e916ab9cf7bbe4b371aa2b3efe8aae8280f5cfb88b483546e84",
+    "docs/SUBSTRATE.md": "bc6fc01a1df279868c7564126486080c284986d509470c4808f6072136831660",
+    "docs/TITLE.md": "c1ad8f1c5d8db6a94d46fd36e1d5e6e0d42c07dc997f4dcff6934b1ab8ee612b"
+  },
+  "summary": [
+    {
+      "file": "00-Input-File-Format.md",
+      "markedBlocks": 6,
+      "scenarios": 7,
+      "structuralPass": 3,
+      "failures": [
+        8,
+        23,
+        29,
+        38
+      ]
+    },
+    {
+      "file": "BIAS.md",
+      "markedBlocks": 1,
+      "scenarios": 3,
+      "structuralPass": 3,
+      "failures": []
+    },
+    {
+      "file": "CONSTANT.md",
+      "markedBlocks": 1,
+      "scenarios": 2,
+      "structuralPass": 2,
+      "failures": []
+    },
+    {
+      "file": "CONVERGENCE.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "DEFINE.md",
+      "markedBlocks": 1,
+      "scenarios": 16,
+      "structuralPass": 12,
+      "failures": [
+        25,
+        42,
+        47,
+        50
+      ]
+    },
+    {
+      "file": "DEPOSIT.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "DOPE.md",
+      "markedBlocks": 1,
+      "scenarios": 26,
+      "structuralPass": 18,
+      "failures": [
+        157,
+        167,
+        168,
+        169,
+        176,
+        178,
+        183,
+        190
+      ]
+    },
+    {
+      "file": "ELECTRODE.md",
+      "markedBlocks": 1,
+      "scenarios": 13,
+      "structuralPass": 9,
+      "failures": [
+        44,
+        58,
+        63,
+        65
+      ]
+    },
+    {
+      "file": "END.md",
+      "markedBlocks": 0,
+      "scenarios": 0,
+      "structuralPass": 0,
+      "failures": []
+    },
+    {
+      "file": "EXTRACT.md",
+      "markedBlocks": 1,
+      "scenarios": 4,
+      "structuralPass": 2,
+      "failures": [
+        84,
+        90
+      ]
+    },
+    {
+      "file": "GRID.md",
+      "markedBlocks": 1,
+      "scenarios": 2,
+      "structuralPass": 2,
+      "failures": []
+    },
+    {
+      "file": "IF-ELSE-ENDIF.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "INSERT.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "INTERFACE.md",
+      "markedBlocks": 1,
+      "scenarios": 5,
+      "structuralPass": 2,
+      "failures": [
+        45,
+        50,
+        52
+      ]
+    },
+    {
+      "file": "LIGHT.md",
+      "markedBlocks": 1,
+      "scenarios": 10,
+      "structuralPass": 5,
+      "failures": [
+        59,
+        60,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "file": "MODEL.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "NFERMI.md",
+      "markedBlocks": 1,
+      "scenarios": 6,
+      "structuralPass": 3,
+      "failures": [
+        43,
+        49,
+        51
+      ]
+    },
+    {
+      "file": "PFERMI.md",
+      "markedBlocks": 1,
+      "scenarios": 6,
+      "structuralPass": 2,
+      "failures": [
+        43,
+        44,
+        51,
+        53
+      ]
+    },
+    {
+      "file": "REGION.md",
+      "markedBlocks": 1,
+      "scenarios": 18,
+      "structuralPass": 11,
+      "failures": [
+        70,
+        72,
+        76,
+        88,
+        93,
+        95,
+        99
+      ]
+    },
+    {
+      "file": "RESTART.md",
+      "markedBlocks": 1,
+      "scenarios": 4,
+      "structuralPass": 2,
+      "failures": [
+        18,
+        21
+      ]
+    },
+    {
+      "file": "SAVE.md",
+      "markedBlocks": 1,
+      "scenarios": 6,
+      "structuralPass": 6,
+      "failures": []
+    },
+    {
+      "file": "STRUCTURE.md",
+      "markedBlocks": 1,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    },
+    {
+      "file": "SUBSTRATE.md",
+      "markedBlocks": 1,
+      "scenarios": 3,
+      "structuralPass": 3,
+      "failures": []
+    },
+    {
+      "file": "TITLE.md",
+      "markedBlocks": 0,
+      "scenarios": 1,
+      "structuralPass": 1,
+      "failures": []
+    }
+  ],
+  "other_fenced_material": [
+    {
+      "file": "BIAS.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "CONSTANT.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "CONVERGENCE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "DEFINE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "DEFINE.md",
+      "line": 69,
+      "language": "",
+      "classification": "other-illustration"
+    },
+    {
+      "file": "DEPOSIT.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "DOPE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "DOPE.md",
+      "line": 114,
+      "language": "",
+      "classification": "other-illustration"
+    },
+    {
+      "file": "DOPE.md",
+      "line": 144,
+      "language": "c",
+      "classification": "other-illustration"
+    },
+    {
+      "file": "ELECTRODE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "END.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "EXTRACT.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "GRID.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "IF-ELSE-ENDIF.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "INSERT.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "INTERFACE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "LIGHT.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "LIGHT.md",
+      "line": 106,
+      "language": "c",
+      "classification": "other-illustration"
+    },
+    {
+      "file": "MODEL.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "NFERMI.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "PFERMI.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "REGION.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "REGION.md",
+      "line": 141,
+      "language": "c",
+      "classification": "other-illustration"
+    },
+    {
+      "file": "RESTART.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "SAVE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "STRUCTURE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "SUBSTRATE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    },
+    {
+      "file": "TITLE.md",
+      "line": 6,
+      "language": "",
+      "classification": "format-template"
+    }
+  ]
+,
+  "samples": [
+    {"id":"00-Input-File-Format:8","document":"docs/00-Input-File-Format.md","source_lines":[8],"input":"substrate type=p conc=2e15 v=0 \"substrate\" is a statement name. \"type\", \"conc\", and \"v\" are parameter names. \"p\", \"2e15\", and \"0\" are parameter values.","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"00-Input-File-Format:16","document":"docs/00-Input-File-Format.md","source_lines":[16],"input":"Dope type=p profile=Gaussian Xmin=0 Ymin=0 Xmax=10 Ymax=5.2 Cmax=2e15 Cb=1.0e14 Xj=3.5 Rp=0","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"00-Input-File-Format:23","document":"docs/00-Input-File-Format.md","source_lines":[23],"input":"xmin = $0$ is equivalent to xmin= $0$","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"00-Input-File-Format:29","document":"docs/00-Input-File-Format.md","source_lines":[29],"input":"plot potential dim=3 axis=3 zmin=0 comment=\"CCD Potential Analysis\"","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"00-Input-File-Format:38","document":"docs/00-Input-File-Format.md","source_lines":[38],"input":"time={1e-10*2^{(@ntime-1)}}, theta={atan2(@y,@x)*180/PI}","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":3},
+    {"id":"00-Input-File-Format:44","document":"docs/00-Input-File-Format.md","source_lines":[44],"input":"DEFINE NAME=Size VALUE=(0.3 0.5 0.8 1.2 2.0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"00-Input-File-Format:19","document":"docs/00-Input-File-Format.md","source_lines":[19],"input":"xmin=0 ymin=3.0,xmax=7.5","normalizations":["removed surrounding prose and inline example label"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"BIAS:22","document":"docs/BIAS.md","source_lines":[22],"input":"BIAS ENAME=DRAIN VSTEP=0.5 NSTEP=10 NFNAME=N2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"BIAS:24","document":"docs/BIAS.md","source_lines":[24],"input":"BIAS ENAME=PD VSTEP=0.5 NSTEP=5 NFNAME=PD1 FLOAT=N ERROR=1E-12","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"BIAS:26","document":"docs/BIAS.md","source_lines":[26],"input":"BIAS ENAME=FD VSTEP=0.2 NSTEP=7 NFNAME=NFD FLOAT=N ERROR=1E-12 BMOD=L","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"CONSTANT:92","document":"docs/CONSTANT.md","source_lines":[92],"input":"CONST TEMP=330 EMOB=1200 HMOB=500 EM1=3.9","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"CONSTANT:93","document":"docs/CONSTANT.md","source_lines":[93],"input":"CONST ASI=(400, 1.1, 500, 0.8, 600, 0.7, 700, 0.8)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"CONVERGENCE:41","document":"docs/CONVERGENCE.md","source_lines":[41,42],"input":"CONV VE=1E-5 FE=1E-5 CA=2 TIME=1E-9 STEP=3\nTRATE=5 NE=1000 FC=800 ABORT=3 METHOD=P POISSON=E RANGEC=Y FPRINT=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:25","document":"docs/DEFINE.md","source_lines":[25],"input":"DEFINE NAME=Width VALUE=5.5 CHAR=Gate width","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:27","document":"docs/DEFINE.md","source_lines":[27],"input":"DEFINE NAME=Length VALUE=4.8 VSTEP=0.2 NSTEP=5","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:29","document":"docs/DEFINE.md","source_lines":[29],"input":"DOPE xmin=0 xmax={@Width-0.5} ymin={@Length/4} ymax=@Length","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":2},
+    {"id":"DEFINE:31","document":"docs/DEFINE.md","source_lines":[31],"input":"EXTRACT PARA=VE ENAME=GATE PARA=VMAX FILE=test-{@Width}-1.txt","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"DEFINE:34","document":"docs/DEFINE.md","source_lines":[34],"input":"EXTRACT PARA=VE ENAME=GATE PARA=VMAX FILE=test-{$Width}-1.txt","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"DEFINE:37","document":"docs/DEFINE.md","source_lines":[37],"input":"DEFINE NAME=Size VALUE=(0.3 0.5 0.8 1.2 2.0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:40","document":"docs/DEFINE.md","source_lines":[40],"input":"DEFINE NAME=Size VALUE=(0.3 0.5 0.8 1.2 2.0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:42","document":"docs/DEFINE.md","source_lines":[42],"input":"DEFINE NAME=Width VALUE=#Size(0.1 1.0 0.4 1.8 3.0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:45","document":"docs/DEFINE.md","source_lines":[45],"input":"DEFINE NAME=Size VALUE=(0.3 0.5 0.8 1.2)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:47","document":"docs/DEFINE.md","source_lines":[47],"input":"DEFINE NAME=File_name CHAR=#Size(abc.txt def.txt ghi.txt jkl.txt)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:50","document":"docs/DEFINE.md","source_lines":[50,51],"input":"DEFINE NAME=Vsub VALUE=20 VSTEP=3 NSTEP=8 OPTIMIZE=#Pwell_Barrier\nTARGET=0. 3 ERROR=0. 001","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:53","document":"docs/DEFINE.md","source_lines":[53,54],"input":"EXTRACT FILE=optimize-1.vm PARA=@Vsub\nPARA=BARRIER AXIS=Z XMIN=3.5 ZMIN=0.3 ZMAX=5 NAME=Pwell_Barrier","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:56","document":"docs/DEFINE.md","source_lines":[56],"input":"DEFINE NAME=extfile CHARACTER={$INPUTFILE}.ext","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"DEFINE:62","document":"docs/DEFINE.md","source_lines":[62],"input":"DEFINE NAME=Value1 VALUE=1 VSTEP=1 NSTEP=2","normalizations":[],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:63","document":"docs/DEFINE.md","source_lines":[63],"input":"DEFINE NAME=Value2 VALUE=2 VSTEP=2 NSTEP=3","normalizations":[],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEFINE:64","document":"docs/DEFINE.md","source_lines":[64],"input":"DEFINE NAME=Value3 VALUE=3 VSTEP=3 NSTEP=4","normalizations":[],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DEPOSIT:23","document":"docs/DEPOSIT.md","source_lines":[23,24],"input":"DEPO TYPE=N CHARGE=1E15 XMIN=5.5 YMIN=6.0 ZMIN=0.1\nXMAX=6.5 YMAX=8.5 ZMAX=0.3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:156","document":"docs/DOPE.md","source_lines":[156],"input":"DOPE ELEM=P PROF=SUPREM3 FILE=storage.sprm XMI=5 YMI=5 XMA=10 YMA=8","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:157","document":"docs/DOPE.md","source_lines":[157,158],"input":"DOPE TYPE=N PROF=GAUS XMI=2 YMI=3 XMA=5.5 YMA=9.8\nCM=1. 2E17 CB=1. 5E15 X T=0. 5 RP=0. 1 LD=0. 9 NAME=CS","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":5,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:160","document":"docs/DOPE.md","source_lines":[160],"input":"DOPE TYPE=N PROF=BOX XMI=0 YMI=0 XMA=5 YMA=7 ZMI=0 ZMA=8 CM=2E14 CB=2E15","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:161","document":"docs/DOPE.md","source_lines":[161],"input":"DOPE PROF=SUPREM4 FILE=cell.sp4 XMI=0 YMI=0 ZMI=0 XMA=8 YMA=9 ZMA=10 XO=1 YO=0.2 AXIS=+Y APPEND=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:162","document":"docs/DOPE.md","source_lines":[162],"input":"DOPE ELEM=B PROF=SUPREM3 FILE=pwell.sprm XMI=0 YMI=0 XMA=10 YMA=8 MUL=1.5 CRATE=0.01 DETECT=S NAME=Pwell","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:163","document":"docs/DOPE.md","source_lines":[163],"input":"DOPE TYPE=N PROF=GAUSS CM=1.2E17 CB=2E15 XJ=0.8 RP=0.1 MASK=POLY(1, 1 5, 1 7, 3 7, 8 4, 8 4, 5 1, 5) NAME=PD","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:164","document":"docs/DOPE.md","source_lines":[164],"input":"DOPE ELEM=P PROF=SUPREM3 FILE=pd.spr MASK=FILE(maskfile.txt,pd-cell,7)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:165","document":"docs/DOPE.md","source_lines":[165],"input":"DOPE ELEM=As PROF=SUPREM3 FILE=vccd.spr XPLUS=2 YPLUS=3 MASK=FILE(maskfile.txt,vccd-cell,5,1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:166","document":"docs/DOPE.md","source_lines":[166],"input":"DOPE ELEM=Ge PROF=FREE FILE=SiGe-1.txt XMI=0 YMI=0 XMA=10 YMA=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:167","document":"docs/DOPE.md","source_lines":[167],"input":"DOPE ELEM=B PROF=SUPREM3 FILE=sd. spr XPLUS=2 YPLUS=3 ZPLUS=4 MASK=MFILE(mask.txt,sd-layer)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:168","document":"docs/DOPE.md","source_lines":[168],"input":"DOPE TYPE=N PROF=FREE FILE=pd. fre MASK=FILE(maskfile.txt, npd, 9) TRIM=PERIODIC(0.2 0.3 5.1 7.2)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:169","document":"docs/DOPE.md","source_lines":[169],"input":"DOPE PROF=ISE2 FILE=ise-2d. dat GFILE=ise-2d. grd X0=-1 Y0=-2 XMI=0 YMI=0 ZMI=0 XMA=8 YMA=9 ZMA=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:170","document":"docs/DOPE.md","source_lines":[170],"input":"DOPE PROF=3D FILE=prof3d.imp XMI=0 YMI=0 ZMI=0 XMA=8 YMA=9 ZMA=10 APPEND=Y XPLUS=2 YPLUS=3 ZPLUS=4","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:171","document":"docs/DOPE.md","source_lines":[171,172],"input":"DOPE ELEM=B PROF=SUPREM3 FILE=cs.spr\nMASK=FILE(maskfile.txt,vccd-cell,5,1) NEGA=Y STEP=AUTO","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:173","document":"docs/DOPE.md","source_lines":[173],"input":"DOPE TYPE=N PROF=FREE FILE=pd.txt XMIN=4 YMIN=4 XMAX=6 YMAX=6 THETA=10 PHI=30","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:174","document":"docs/DOPE.md","source_lines":[174],"input":"DOPE TYPE=P PROF=FREE FILE=cs.txt XMIN=2 XMAX=3 ZMIN=0.5 ZMAX=1 YMAX=2.5 AXIS=-Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:175","document":"docs/DOPE.md","source_lines":[175],"input":"DOPE TYPE=N PROF=FREE FILE=sd.txt ZMAX=4.5 AXIS=-Z MASK=FILE(maskfile.txt, backside-cell, 3, 1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:176","document":"docs/DOPE.md","source_lines":[176],"input":"DOPE TYPE=P PROF=FREE FILE=p+. txt ZMIN=3.5 ZMAX=4.0 AXIS=X-Y+XMIN=2.5 YMIN=1.5 XMAX=3.5 YMAX=2.5","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:177","document":"docs/DOPE.md","source_lines":[177],"input":"DOPE TYPE=P PROF=FREE FILE=cs.txt ZMIN=3.5 ZMAX=4.0 AXIS=IN MASK=FILE(maskfile.txt, side-wall, 4, 1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:178","document":"docs/DOPE.md","source_lines":[178,179,180,181,182],"input":"DOPE TYPE=P PROF=FREE FILE=cs.txt\nMASK=FILE (maskfile.txt, pixel, 1, 1)\nMASK=FILE (maskfile.txt, pixel, 2, 1)\nANDMASK=FILE (maskfile.txt, pixel, 3, 1)\nANDNEGA=FILE (maskfile.txt, pixel, 4, 1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":12,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:183","document":"docs/DOPE.md","source_lines":[183,184],"input":"DOPE TYPE=P PROF=FREE FILE=cs.txt\nMASK=FILE (maskfile.txt, pixel, 1, 1) SKIP=2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:185","document":"docs/DOPE.md","source_lines":[185],"input":"DOPE TYPE=P PROF=FREE FILE=dope-1.txt LOCOS=LOCOS-1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:186","document":"docs/DOPE.md","source_lines":[186],"input":"DOPE TYPE=P PROF=FREE FILE=dope-3.txt MATERIAL=NITRIDE MASK=FILE(maskfile.txt,cell-3,5,1) ZMIN=0.1 ZMAX=4","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:187","document":"docs/DOPE.md","source_lines":[187],"input":"DOPE PROF=3D FILE=prof3d.imp XMI=0 YMI=0 ZMI=0 XMA=16 YMA=9 ZMA=10 XSHIFT=8 YSHIFT=0 ZSHIFT=1 FXMUL=-1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:188","document":"docs/DOPE.md","source_lines":[188,189],"input":"DOPE TYPE=P PROF=FREE FILE=ppd.txt\nMASK=FILE(maskfile.gds,pixel,6,1) EXPAND=-0.1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"DOPE:190","document":"docs/DOPE.md","source_lines":[190,191,192,193,194],"input":"DOPE TYPE=N PROF=FREE FILE=npd.txt\nMASK=FILE (maskfile.txt, pixel, 5)\n&[MASK=FILE(maskfile.txt,pixel,6)\nANDMASK=FILE (maskfile.txt, pixel, 7)\nANDNEGA=FILE(maskfile.txt,pixel,8)]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":5,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"ELECTRODE:43","document":"docs/ELECTRODE.md","source_lines":[43],"input":"ELECTRODE XMI=2.0 YMI=3 ZMI=0 XMA=5.5 YMA=7.8 ZMA=0.1 V=5 PAT=X+Y+ NAME=Drain","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:44","document":"docs/ELECTRODE.md","source_lines":[44,45],"input":"ELECTRODE XMI=1 YMI=2 ZMI=-0.5 XMA=5.5 YMA=7.8 ZMA=-0.1 NAME=Gate1\nV=PWL(002E-954E-956E-90) SUPREM4=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:46","document":"docs/ELECTRODE.md","source_lines":[46,47],"input":"ELECTRODE XMI=8.0 YMI=3 ZMI=0 XMA=8 YMA=3 ZMA=0.1 V=0\nNAME=CS RESIST=1E8","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:48","document":"docs/ELECTRODE.md","source_lines":[48],"input":"ELECTRODE ZMIN=-0.2 ZMAX=-0.1 MASK=POLY(0, 4 3, 4 3, 7 8, 7 8, 9 0, 9) V=0","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:49","document":"docs/ELECTRODE.md","source_lines":[49],"input":"ELECTRODE ZMIN=-0.3 ZMAX=-0.1 MASK=FILE(maskfile.txt, gate, 8) V=5","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:50","document":"docs/ELECTRODE.md","source_lines":[50,51],"input":"ELECTRODE ZMIN=-0.3 ZMAX=-0.1 XPLUS=3 YPLUS=4\nMASK=FILE(maskfile.txt.drain.6.2) V=3.3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:52","document":"docs/ELECTRODE.md","source_lines":[52],"input":"ELECTRODE XMI=1 XMA=2 YMI=2 YMA=3 ZMI=-0.3 ZMA=-0.1 V=FILE(source.txt)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:53","document":"docs/ELECTRODE.md","source_lines":[53],"input":"ELECTRODE XMI=8.0 YMI=3 ZMI=0 XMA=8 YMA=3 ZMA=0.1 LOCOS=Y V=0","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:54","document":"docs/ELECTRODE.md","source_lines":[54,55],"input":"ELECTRODE ZMIN=-0.3 ZMAX=-0.1 MASK=FILE(maskfile.txt,rg,9) V=0\nTRIM=PERIODIC(0.2 0.3 5.1 7.2)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:56","document":"docs/ELECTRODE.md","source_lines":[56,57],"input":"ELECTRODE ZMIN=-0.4 ZMAX=-0.1 MASK=FILE(maskfile.txt,cs,7) V=0\nNEGA=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:58","document":"docs/ELECTRODE.md","source_lines":[58,59,60,61,62],"input":"ELECTRODE ZMIN=-0.4 ZMAX=-0.1 V=3.3\nMASK=FILE (maskfile.gds, pixel, 4)\nMASK=FILE (maskfile.gds, pixel, 5)\nANDMASK=FILE (maskfile.gds, pixel, 6)\nANDNEGA=FILE (maskfile.gdst, pixel, 7)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":8,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:63","document":"docs/ELECTRODE.md","source_lines":[63,64],"input":"ELECTRODE ZMIN=-0.2 ZMAX=-0.05 V=0\nMASK=FILE (maskfile.gds, gate, 8) EXPAND=-0.1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"ELECTRODE:65","document":"docs/ELECTRODE.md","source_lines":[65,66,67,68,69],"input":"ELECTRODE ZMIN=-0.3 ZMAX=-0.1 V=2\nMASK=FILE (maskfile.txt, pixel, 4)\n&[MASK=FILE(maskfile.txt,pixel,5)\nANDMASK=FILE (maskfile.txt, pixel, 6)\nANDNEGA=FILE (maskfile.txt, pixel, 7)]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":6,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"EXTRACT:66","document":"docs/EXTRACT.md","source_lines":[66,67,68,69,70,71,72,73],"input":"EXTRACT PARA=VE ENAME=DRAIN FILE=mostr.cur\nPARA=NCUR ENAME=DRAIN\nPARA=ELEC XMIN=5 YMIN=2 ZMIN=0 XMAX=8 YMAX=6 ZMAX=1\nPARA=NSAD XMIN=5 YMIN=2 ZMIN=0 XMAX=8 YMAX=6 ZMAX=1 AXIS=X\nPARA=EMIN XMIN=3 YMIN=0 ZMIN=0 XMAX=6 YMAX=8 ZMAX=2 AXIS=-X\nPARA=@user_defined_parameter\nPARA=$$user_character_string\nPARA=ELEC MASK=FILE(mask.txt, PD1, 2) ZMIN=0.2 ZMAX=2 NAME=pd1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"EXTRACT:75","document":"docs/EXTRACT.md","source_lines":[75,76,77,78,79,80,81,82],"input":"EXTRACT PARA=VE ENAME=DRAIN PARA=NC ENAME=DRAIN FILE=mostr-{%3.1f:@Vg}.nc\nPARA=EVOL XMIN=1 YMIN=2 ZMIN=0 XMAX=8 YMAX=6 ZMAX=3 VALUE=2E5\nPARA=NSADDLE AXIS=-X XMIN=1 XMAX=7 ZMAX=2 PEAK=Y\nPARA=PSADDLE AXIS=N XMIN=5 XMAX=8 ZMAX=0.3 ZMAX=3\nPARA=PBARRIER AXIS=X-Y-Z- XMIN=2 XMAX=6 YMIN=3 YMAX=5\nZMAX=0.1 ZMAX=1 RADIUS=0.3 STEP=40\nPARA=EMAX XMIN=5 YMIN=2 ZMIN=0 XMAX=8 YMAX=6 ZMAX=3 MATE=OX\nPARA=NGR XMIN=1.0 YMIN=1.5 ZMIN=0.2 XMAX=1.8 YMAX=2.2 ZMAX=1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"EXTRACT:84","document":"docs/EXTRACT.md","source_lines":[84,85,86,87,88,89],"input":"EXTRACT FILE={$INPUTFILE}.ext\nPARA=VMAX ZMAX=2\nMASK=FILE(ext-mask.txt,cis,1)\nMASK=FILE (ext-mask. txt, cis, 2)\nANDMASK=FILE(ext-mask.txt, cis, 3)\nANDNEGA=FILE(ext-mask.txt,cis,4)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"EXTRACT:90","document":"docs/EXTRACT.md","source_lines":[90,91,92,93,94],"input":"EXTRACT FILE={$INPUTFILE}.ele OPTION=PRECISE DELIMIT=TAB\nPARA=@VFD PARA=ELEC ZMAX=2\nPARA=VMAX XMIN=0.5 XMAX=1.0 ZMIN=0.1 ZMAX=0.8 NAME=XVMAX 1\nPARA=NSADDLE AXIS=-X XMIN=0 XMAX={#XVMAX 1+0.1}\nPARA=VALUE VALUE={#Electron-1 * 1E-3}","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs","unescaped Markdown $, _, *, {, }"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":3},
+    {"id":"GRID:37","document":"docs/GRID.md","source_lines":[37],"input":"GRID ZMIN=-0.1 ZMAX=0 STEP=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"GRID:38","document":"docs/GRID.md","source_lines":[38],"input":"GRID RATIO=20 ZMAX=20 STEP=30","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"IF-ELSE-ENDIF:15","document":"docs/IF-ELSE-ENDIF.md","source_lines":[15,16,17,18,19],"input":"IF [@Cmax <= 5E16]\nELECTRODE Xmin=0 Xmax=5 Ymin=0 Ymax=5 Zmin=-0.05 Zmax=-0.03 V=0\nELSE\nELECTRODE Ymin=0 Ymax=5 Vmin=0 Ymax=5 Zmin=-0.05 Zmax=-0.03 V=5\nENDIF","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"INSERT:14","document":"docs/INSERT.md","source_lines":[14],"input":"INSERT FILE=MOS-1.txt","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"INTERFACE:41","document":"docs/INTERFACE.md","source_lines":[41,42],"input":"INTERFACE MATE=NI MATE=SI XMI=2 YMI=3 ZMI=1 XMA=8 YMA=8 ZMA=2\nQF=5E10 SN=50 SP=50","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"INTERFACE:43","document":"docs/INTERFACE.md","source_lines":[43,44],"input":"INTERFACE MATE=OXIDE MATE=SI MASK=FILE(maskfile.txt,gate,8,3)\nZMIN=-1 ZMAX=1 TRAPMOB=1E-6 CTRAP=1E12 DTRAP=1E-5","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"INTERFACE:45","document":"docs/INTERFACE.md","source_lines":[45,46,47,48,49],"input":"INTERFACE MATE=SI ZMIN=-1 ZMAX=1 QF=8E10\nMASK=FILE(maskfile.txt, cis, 1, 3)\nANDMASK=FILE(maskfile.txt,cis,2,3)\nANDNEGA=FILE (maskfile.txt, cis, 2, 4)\nMASK=FILE(maskfile.txt, cis, 3, 3)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":3,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"INTERFACE:50","document":"docs/INTERFACE.md","source_lines":[50,51],"input":"INTERFACE MATE=M1 MATE=M2 ZMIN=-1 ZMAX=-0.5 QF=2E11\nMASK=FILE (maskfile.gds, cell-1, 1, 5) EXPAND=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"INTERFACE:52","document":"docs/INTERFACE.md","source_lines":[52,53,54,55,56],"input":"INTERFACE MATE=M1 MATE=M2 ZMIN=-1 ZMAX=-0.5 QF=-1E11\nMASK=FILE (maskfile.txt, pixel, 4)\n&[ MASK=FILE(maskfile.txt,pixel,5)\nANDMASK=FILE (maskfile.txt, pixel, 6)\nANDNEGA=FILE (maskfile.txt, pixel, 7) ]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":7,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"LIGHT:54","document":"docs/LIGHT.md","source_lines":[54],"input":"LIGHT LA=400 P0=1E-3 XMI=4 YMI=2 XMAX=8 YMAX=9 THETA=10 PHI=90","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:55","document":"docs/LIGHT.md","source_lines":[55],"input":"LIGHT FILE=toccata-1.rtd TYPE=WAVE POWER=1E-3 SKIP=3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:56","document":"docs/LIGHT.md","source_lines":[56],"input":"LIGHT FILE=toccata-2.rtd TYPE=WAVE REVERSE=X POWER=1E-2 NSTEP=15","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:57","document":"docs/LIGHT.md","source_lines":[57],"input":"LIGHT LA=500 POWER=PWL(0, 0 1E-9, 0 2E-9, 1E-3 8E-9, 3E-3) XMI=4 YMI=2 XMAX=8 YMAX=9 BACK=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:58","document":"docs/LIGHT.md","source_lines":[58],"input":"LIGHT FILE=toccata-4.rtd ASI=T NSI=T XMI=1 YMI=2 XMAX=8 YMAX=6 ZMAX=3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:59","document":"docs/LIGHT.md","source_lines":[59],"input":"LIGHT LAMBDA=550 POW=1E-3 MASK=FILE (maskfile.txt,cell-1,5,1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:60","document":"docs/LIGHT.md","source_lines":[60,61,62,63,64],"input":"LIGHT LAMBDA=550 POW=1E-3\nMASK=FILE (maskfile.txt, cell-1, 5, 1)\nMASK=FILE (maskfile.txt, cell-1, 6, 1)\nANDMASK=FILE (maskfile.txt,cell-1,7,1)\nANDNEGA=FILE (maskfile.txt,cell-1,8,1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":9,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:65","document":"docs/LIGHT.md","source_lines":[65],"input":"LIGHT FILE=light power.txt Zmax=10 Power=PWL(0, 0 1E-9, 0 1E-9, 3E-3)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:66","document":"docs/LIGHT.md","source_lines":[66],"input":"LIGHT POW=1E-3 MASK=FILE (maskfile.gds, cell-1, 9, 1) EXPAND=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"LIGHT:67","document":"docs/LIGHT.md","source_lines":[67,68,69,70,71],"input":"LIGHT LAMBDA=550 POW=1E-3\nMASK=FILE (maskfile.txt, pixel, 4)\n&[ MASK=FILE (maskfile.txt, pixel, 5)\nANDMASK=FILE (maskfile.txt, pixel, 6)\nANDNEGA=FILE (maskfile.txt, pixel, 7) ]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":7,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"MODEL:22","document":"docs/MODEL.md","source_lines":[22],"input":"MODEL MOBILITY=Y BGN=Y SRH=Y AUGER=Y IMPACT=Y FNC=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:41","document":"docs/NFERMI.md","source_lines":[41],"input":"NFERMI XMIN=2.0 YMIN=3 ZMIN=0 XMAX=5.5 YMAX=7.8 ZMAX=0.1 V=10 PAT=X+Y- NAME=drain","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:42","document":"docs/NFERMI.md","source_lines":[42],"input":"NFERMI MASK=FILE(mask.txt, PDN, 2) NAME=pdn V=3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:43","document":"docs/NFERMI.md","source_lines":[43,44,45,46,47],"input":"NFERMI NAME=pdn ZMIN=0 ZMAX=10 V=3.3\nMASK=FILE (mask. txt, cell-1, 2)\nMASK=FILE (mask. txt, cell-1, 3)\nANDMASK=FILE (mask. txt, cell-1, 4)\nANDNEGA=FILE (mask. txt, cell-1, 5)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":9,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:48","document":"docs/NFERMI.md","source_lines":[48],"input":"NFERMI NAME=PD XMIN=3 XMAX=7 YMIN=2 YMAX=8 ZMIN=0 ZMAX=10 V=3.3 AXIS=Z DV=-10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:49","document":"docs/NFERMI.md","source_lines":[49,50],"input":"NFERMI ZMIN=0 ZMAX=2 V=3\nMASK=FILE (mask.gds, cell-1, 9) EXPAND=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"NFERMI:51","document":"docs/NFERMI.md","source_lines":[51,52,53,54,55],"input":"NFERMI NAME=pdn ZMIN=0 ZMAX=3 V=2\nMASK=FILE (mask. txt, cell-2, 2)\n&[ MASK=FILE (mask. txt, cell-2, 3)\nANDMASK=FILE (mask. txt, ce11-2, 4)\nANDNEGA=FILE (mask. txt, cell-2, 5) ]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":8,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"PFERMI:42","document":"docs/PFERMI.md","source_lines":[42],"input":"PFERMI XMIN=2.0 YMIN=3 ZMIN=0 XMAX=5.5 YMAX=7.8 ZMAX=0.1 V=5 PAT=X-Y- NAME=DRAIN","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"PFERMI:43","document":"docs/PFERMI.md","source_lines":[43],"input":"PFERMI MASK=FILE (mask.txt, PDP, 3) name=pd3 V=5","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"PFERMI:44","document":"docs/PFERMI.md","source_lines":[44,45,46,47,48],"input":"PFERMI NAME=pdp ZMIN=0 ZMAX=10 V=3.3\nMASK=FILE (mask. txt, cell-1, 5)\nMASK=FILE (mask. txt, cell-1, 6)\nANDMASK=FILE (mask. txt, cell-1, 7)\nANDNEGA=FILE (mask. txt, cell-1, 5)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":9,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"PFERMI:49","document":"docs/PFERMI.md","source_lines":[49,50],"input":"PFERMI NAME=PD XMIN=3 XMAX=7 YMIN=2 YMAX=8 ZMIN=0 ZMAX=10 V=3.3\nAXIS=Z DV=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"PFERMI:51","document":"docs/PFERMI.md","source_lines":[51,52],"input":"PFERMI ZMIN=0 ZMAX=2 V=-3\nMASK=FILE (mask. gds, cell-1, 9) EXPAND=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"PFERMI:53","document":"docs/PFERMI.md","source_lines":[53,54,55,56,57],"input":"PFERMI NAME=pdp ZMIN=0 ZMAX=3 V=0\nMASK=FILE (mask. txt, cell-3, 2)\n&[ MASK=FILE(mask.txt,cell-3,3)\nANDMASK=FILE (mask. txt, cell-3, 4)\nANDNEGA=FILE (mask. txt, cell-3, 5) ]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":8,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"REGION:67","document":"docs/REGION.md","source_lines":[67],"input":"REGION MATERIAL=NI XMI=2 YMI=3 ZMI=1 XMA=8 YMA=8 ZMA=2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:68","document":"docs/REGION.md","source_lines":[68,69],"input":"REGION MATERIAL=SUPREM4 FILE='mostr.str' XMI=1 YMI=2 ZMI=0\nXMA=3 YMA=5 ZMA=5 AXIS=-X XO=0 YO=-0.1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:70","document":"docs/REGION.md","source_lines":[70,71],"input":"REGION MATERIAL=LOCOS BEAK=1.0 ZMIN=-0.6 ZMAX=0.7\nMASK=POLYGON (1, 1 3, 1 4, 2 4, 5 2, 5 1, 4) NAME=LOCOS-1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:72","document":"docs/REGION.md","source_lines":[72],"input":"REGION MATERIAL=OXIDE ZMI=0 ZMA=0.4 MASK=FILE (maskfile.txt, trench, 9)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:73","document":"docs/REGION.md","source_lines":[73,74],"input":"REGION MATERIAL=LOCOS ZMI=-0.5 ZMA=0.4 BEAK=0.9\nMASK=FILE(maskfile.txt,locos, 3, 1) XPLUS=2 YPLUS=3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:75","document":"docs/REGION.md","source_lines":[75],"input":"REGION XMI=2 YMI=3 ZMI=1 XMA=8 YMA=8 ZMA=2 TNO=1E-5 TPO=1E-6","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:76","document":"docs/REGION.md","source_lines":[76,77],"input":"REGION MATERIAL=OXIDE ZMI=0 ZMA=0.4 MASK=FILE(maskfile.txt,oxide,8)\nTRIM=RECT (0. 1 0. 2 7. 1 9. 2)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:78","document":"docs/REGION.md","source_lines":[78],"input":"REGION XMI=0 YMI=0 ZMI=0 XMA=6 YMA=7 ZMA=8 RN=FILE(srhfile-1.txt)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:79","document":"docs/REGION.md","source_lines":[79,80],"input":"REGION XMI=1 YMI=0 ZMI=0 XMA=8 YMA=8 ZMA=8 GR=FILE(grfile-1.txt)\nMULTI=1E-2 XPLUS=0.5 YPLUS=1.2 ZPLUS=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:81","document":"docs/REGION.md","source_lines":[81],"input":"REGION XMI=1 YMI=2 ZMI=0 XMA=5 YMA=3 ZMA=2 EMOB=800","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:82","document":"docs/REGION.md","source_lines":[82,83,84],"input":"REGION MATERIAL=LOCOS MASK=POLYGON(1, 1 3, 1 4, 2 4, 5 2, 5 1, 4)\nBEAK= (0. 15 0. 29 0. 4 0. 5) ZMIN= (-0. 05 -0. 08 -0. 15 -0. 2)\nZMAX=(0.05 0.12 0.15 0.2) EDGE=FIELD NAME=LOCOS-2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:85","document":"docs/REGION.md","source_lines":[85],"input":"REGION NC=1E-6 XMI=1.5 YMI=2.1 ZMI=0 XMA=1.8 YMA=2.7 ZMA=1.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:86","document":"docs/REGION.md","source_lines":[86,87],"input":"REGION XMI=1 YMI=0 ZMI=0 XMA=8 YMA=8 ZMA=8 GR=FILE(grfile-1.txt)\nMULTI=1E-3 FXMUL=0.5 FYMUL=0.5 XSHIFT=2 YSHIFT=3 ZSHIFT=0.1","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:88","document":"docs/REGION.md","source_lines":[88,89,90,91,92],"input":"REGION MATERIAL=LOCOS ZMI=-0.2 ZMA=0.2 BEAK=0\nMASK=FILE (maskfile.txt, cell-2, 3, 1)\nMASK=FILE (maskfile.txt, cell-2, 4, 1)\nANDMASK=FILE (maskfile.txt, cell-2, 5, 1)\nANDNEGA=FILE (maskfile.txt, cell-2, 6, 1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":12,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:93","document":"docs/REGION.md","source_lines":[93,94],"input":"REGION MATERIAL=INSULATOR ZMIN=3.0 ZMA=4.0 ZBEAK=3.5 BEAK=0.5\nSHAPE=LOCOS MASK=FILE (maskfile.txt,cell-2,3,1)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:95","document":"docs/REGION.md","source_lines":[95,96],"input":"REGION GR=FILE(grfile-1.txt) XMI=3 YMI=0 ZMI=0 XMA=8 YMA=9 ZMA=3\nMULTI=PWL (0, 0 1E-7, 0 5E-7, 1 8E-7, 1 1E-6, 0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:97","document":"docs/REGION.md","source_lines":[97,98],"input":"REGION MATERIAL=M1 ZMI=0 ZMA=0.4 MASK=FILE(maskfile.gds,cell-1,9)\nEXPAND=0.2","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"REGION:99","document":"docs/REGION.md","source_lines":[99,100,101,102,103],"input":"REGION MATERIAL=M1 ZMI=-0.3 ZMA=-0.1\nMASK=FILE (maskfile.txt, cell-3, 3, 1)\n&[ MASK=FILE(maskfile.txt,cell-3,4,1)\nANDMASK=FILE (maskfile.txt, cell-3, 5, 1)\nANDNEGA=FILE (maskfile.txt, cell-3, 6, 1) ]","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":9,"missing":0,"unparsed_lines":1,"reference_nodes":0},
+    {"id":"RESTART:18","document":"docs/RESTART.md","source_lines":[18],"input":"RESTART FILE=MOS-Tr-1. save","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"RESTART:19","document":"docs/RESTART.md","source_lines":[19],"input":"RESTART FILE=CCD-1.save NEW_FERMI=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"RESTART:20","document":"docs/RESTART.md","source_lines":[20],"input":"RESTART FILE=CIS-1.save ADD_IMP=Y","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"RESTART:21","document":"docs/RESTART.md","source_lines":[21],"input":"RESTART FILE=MOS-1. save OLD_ELE=Y ELECTRODE NAME=TG V=3.3","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"fail","errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SAVE:17","document":"docs/SAVE.md","source_lines":[17],"input":"SAVE FILE=MOS-Tr-1.save OPTION=FINAL","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SAVE:18","document":"docs/SAVE.md","source_lines":[18],"input":"SAVE FILE=ccd-1.txt TYPE=TEXT","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SAVE:19","document":"docs/SAVE.md","source_lines":[19],"input":"DEFINE NAME=Vsub VALUE=10 VSTEP=1 NSTEP=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SAVE:20","document":"docs/SAVE.md","source_lines":[20],"input":"SAVE FILE=es-vsub-{@Vsub-10}.dat TYPE=DATA","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"SAVE:21","document":"docs/SAVE.md","source_lines":[21],"input":"SAVE FILE=es-vsub-{%3.1f:@Vsub-10}.dat TYPE=DATA","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":1},
+    {"id":"SAVE:22","document":"docs/SAVE.md","source_lines":[22],"input":"SAVE FILE=trans-1.dat TYPE=DATA TSTEP=(0, 5, 10, 15, 20)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"STRUCTURE:21","document":"docs/STRUCTURE.md","source_lines":[21],"input":"STRUCT XB=P YB=R XMAX=10 YMAX=10 ZMAX=20 ZMIN=-0.08 CELL=T","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SUBSTRATE:17","document":"docs/SUBSTRATE.md","source_lines":[17],"input":"SUBS TYPE=P C=1E15 V=10","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SUBSTRATE:18","document":"docs/SUBSTRATE.md","source_lines":[18],"input":"SUBS TYPE=N C=1E14 V=FLOAT","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"SUBSTRATE:19","document":"docs/SUBSTRATE.md","source_lines":[19],"input":"SUBS TYPE=P C=2E15 V=PWL(0, 0 1E-7, -2 5E-7, -2 1E-6, 0)","normalizations":["removed example label and presentation indentation","excluded explanatory prose lines; no OCR or syntax repairs"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0},
+    {"id":"TITLE:9","document":"docs/TITLE.md","source_lines":[9],"input":"TITLE MOS Tr W/L=5/2","normalizations":["removed inline example label"],"structural_status":"pass","errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0}
+  ],
+  "probes": [
+    {"id":"spaced_function","input":"REGION MASK=FILE (mask.txt,cell,3)","exit":1,"errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 16]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 16]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 16])))\n  (ERROR [0, 16] - [0, 34]\n    (ERROR [0, 17] - [0, 27]\n      (statement_name [0, 18] - [0, 26]))\n    (statement_name [0, 27] - [0, 31])\n    (numeric_value [0, 32] - [0, 33])))\n"},
+    {"id":"adjacent_function","input":"REGION MASK=FILE(mask.txt,cell,3)","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 33]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 33]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (function_call [0, 12] - [0, 33]\n        name: (function_name [0, 12] - [0, 16])\n        arguments: (argument_list [0, 17] - [0, 32]\n          (character_value [0, 17] - [0, 25])\n          (character_value [0, 26] - [0, 30])\n          (numeric_value [0, 31] - [0, 32]))))))\n"},
+    {"id":"bare_numeric_reference","input":"SUBS V=@Width","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 13]\n    name: (statement_name [0, 0] - [0, 4])\n    (parameter [0, 5] - [0, 13]\n      name: (parameter_name [0, 5] - [0, 6])\n      operator: (assignment_operator [0, 6] - [0, 7])\n      value: (character_value [0, 7] - [0, 13]))))\n"},
+    {"id":"bare_string_reference","input":"SAVE FILE=$INPUTFILE","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 20]\n    name: (statement_name [0, 0] - [0, 4])\n    (parameter [0, 5] - [0, 20]\n      name: (parameter_name [0, 5] - [0, 9])\n      operator: (assignment_operator [0, 9] - [0, 10])\n      value: (character_value [0, 10] - [0, 20]))))\n"},
+    {"id":"extracted_reference","input":"DEFINE NAME=x OPTIMIZE=#Barrier","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 31]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 13]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 13]))\n    (parameter [0, 14] - [0, 31]\n      name: (parameter_name [0, 14] - [0, 22])\n      operator: (assignment_operator [0, 22] - [0, 23])\n      value: (character_value [0, 23] - [0, 31]))))\n"},
+    {"id":"linked_numeric_series","input":"DEFINE NAME=Width VALUE=#Size(0.1 1.0 0.4 1.8 3.0)","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 50]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 17]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 17]))\n    (parameter [0, 18] - [0, 50]\n      name: (parameter_name [0, 18] - [0, 23])\n      operator: (assignment_operator [0, 23] - [0, 24])\n      (ERROR [0, 24] - [0, 29]\n        (character_fragment [0, 24] - [0, 29]))\n      value: (parenthesized_series [0, 29] - [0, 50]\n        (numeric_value [0, 30] - [0, 33])\n        (numeric_value [0, 34] - [0, 37])\n        (numeric_value [0, 38] - [0, 41])\n        (numeric_value [0, 42] - [0, 45])\n        (numeric_value [0, 46] - [0, 49])))))\n"},
+    {"id":"linked_character_series","input":"DEFINE NAME=File_name CHAR=#Size(abc.txt def.txt ghi.txt jkl.txt)","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 65]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 21]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 21]))\n    (parameter [0, 22] - [0, 65]\n      name: (parameter_name [0, 22] - [0, 26])\n      operator: (assignment_operator [0, 26] - [0, 27])\n      (ERROR [0, 27] - [0, 32]\n        (character_fragment [0, 27] - [0, 32]))\n      value: (parenthesized_series [0, 32] - [0, 65]\n        (character_value [0, 33] - [0, 40])\n        (character_value [0, 41] - [0, 48])\n        (character_value [0, 49] - [0, 56])\n        (character_value [0, 57] - [0, 64])))))\n"},
+    {"id":"mask_group","input":"REGION MATERIAL=M1\n MASK=FILE(mask.txt,cell,3)\n &[ MASK=FILE(mask.txt,cell,4)\n ANDMASK=FILE(mask.txt,cell,5)\n ANDNEGA=FILE(mask.txt,cell,6) ]","exit":1,"errors":1,"missing":0,"unparsed_lines":1,"reference_nodes":0,"tree":"(source_file [0, 0] - [5, 0]\n  (statement [0, 0] - [0, 18]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 18]\n      name: (parameter_name [0, 7] - [0, 15])\n      operator: (assignment_operator [0, 15] - [0, 16])\n      value: (character_value [0, 16] - [0, 18])))\n  (continuation_line [1, 0] - [1, 27]\n    (parameter [1, 1] - [1, 27]\n      name: (parameter_name [1, 1] - [1, 5])\n      operator: (assignment_operator [1, 5] - [1, 6])\n      value: (function_call [1, 6] - [1, 27]\n        name: (function_name [1, 6] - [1, 10])\n        arguments: (argument_list [1, 11] - [1, 26]\n          (character_value [1, 11] - [1, 19])\n          (character_value [1, 20] - [1, 24])\n          (numeric_value [1, 25] - [1, 26])))))\n  (unparsed_line [2, 0] - [2, 30])\n  (continuation_line [3, 0] - [3, 30]\n    (parameter [3, 1] - [3, 30]\n      name: (parameter_name [3, 1] - [3, 8])\n      operator: (assignment_operator [3, 8] - [3, 9])\n      value: (function_call [3, 9] - [3, 30]\n        name: (function_name [3, 9] - [3, 13])\n        arguments: (argument_list [3, 14] - [3, 29]\n          (character_value [3, 14] - [3, 22])\n          (character_value [3, 23] - [3, 27])\n          (numeric_value [3, 28] - [3, 29])))))\n  (continuation_line [4, 0] - [4, 31]\n    (parameter [4, 1] - [4, 30]\n      name: (parameter_name [4, 1] - [4, 8])\n      operator: (assignment_operator [4, 8] - [4, 9])\n      value: (function_call [4, 9] - [4, 30]\n        name: (function_name [4, 9] - [4, 13])\n        arguments: (argument_list [4, 14] - [4, 29]\n          (character_value [4, 14] - [4, 22])\n          (character_value [4, 23] - [4, 27])\n          (numeric_value [4, 28] - [4, 29])))))\n  (ERROR [4, 31] - [4, 32]))\n"},
+    {"id":"grouped_expression","input":"DEFINE NAME=x VALUE={(@Width+1)*2}","exit":1,"errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":1,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [1, 0]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 13]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 13]))\n    (parameter [0, 14] - [1, 0]\n      name: (parameter_name [0, 14] - [0, 19])\n      operator: (assignment_operator [0, 19] - [0, 20])\n      value: (braced_expression [0, 20] - [1, 0]\n        (ERROR [0, 21] - [0, 22])\n        (variable_reference [0, 22] - [0, 28])\n        (expression_operator [0, 28] - [0, 29])\n        (numeric_value [0, 29] - [0, 30])\n        (ERROR [0, 30] - [0, 34]\n          (comment [0, 31] - [0, 34]))))))\n"},
+    {"id":"malformed_assignment","input":"GRID XMIN=\nSAVE FILE=after.dat","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [2, 0]\n  (statement [0, 0] - [1, 19]\n    name: (statement_name [0, 0] - [0, 4])\n    (parameter [0, 5] - [1, 4]\n      name: (parameter_name [0, 5] - [0, 9])\n      operator: (assignment_operator [0, 9] - [0, 10])\n      (ERROR [0, 10] - [1, 0])\n      value: (character_value [1, 0] - [1, 4]))\n    (parameter [1, 5] - [1, 19]\n      name: (parameter_name [1, 5] - [1, 9])\n      operator: (assignment_operator [1, 9] - [1, 10])\n      value: (character_value [1, 10] - [1, 19]))))\n"},
+    {"id":"unterminated_string","input":"DEFINE CHARACTER=\"unfinished\nSAVE FILE=after.dat","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [2, 0]\n  (statement [0, 0] - [1, 19]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [1, 4]\n      name: (parameter_name [0, 7] - [0, 16])\n      operator: (assignment_operator [0, 16] - [0, 17])\n      (ERROR [0, 17] - [1, 0]\n        (expression_fragment [0, 17] - [0, 28]))\n      value: (character_value [1, 0] - [1, 4]))\n    (parameter [1, 5] - [1, 19]\n      name: (parameter_name [1, 5] - [1, 9])\n      operator: (assignment_operator [1, 9] - [1, 10])\n      value: (character_value [1, 10] - [1, 19]))))\n"},
+    {"id":"unmatched_else","input":"ELSE\nSAVE FILE=after.dat","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [2, 0]\n  (else_statement [0, 0] - [0, 4]\n    name: (statement_name [0, 0] - [0, 4]))\n  (statement [1, 0] - [1, 19]\n    name: (statement_name [1, 0] - [1, 4])\n    (parameter [1, 5] - [1, 19]\n      name: (parameter_name [1, 5] - [1, 9])\n      operator: (assignment_operator [1, 9] - [1, 10])\n      value: (character_value [1, 10] - [1, 19]))))\n"},
+    {"id":"unknown_statement","input":"NOT_A_STATEMENT X=1","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 19]\n    name: (statement_name [0, 0] - [0, 15])\n    (parameter [0, 16] - [0, 19]\n      name: (parameter_name [0, 16] - [0, 17])\n      operator: (assignment_operator [0, 17] - [0, 18])\n      value: (numeric_value [0, 18] - [0, 19]))))\n"},
+    {"id":"arbitrary_punctuation","input":"???\nSAVE FILE=after.dat","exit":0,"errors":0,"missing":0,"unparsed_lines":1,"reference_nodes":0,"tree":"(source_file [0, 0] - [2, 0]\n  (unparsed_line [0, 0] - [0, 3])\n  (statement [1, 0] - [1, 19]\n    name: (statement_name [1, 0] - [1, 4])\n    (parameter [1, 5] - [1, 19]\n      name: (parameter_name [1, 5] - [1, 9])\n      operator: (assignment_operator [1, 9] - [1, 10])\n      value: (character_value [1, 10] - [1, 19]))))\n"},
+    {"id":"blank_whitespace","input":"   \n\t\nEND","exit":1,"errors":2,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [3, 0]\n  (ERROR [0, 0] - [0, 3])\n  (ERROR [1, 0] - [1, 1])\n  (end_statement [2, 0] - [2, 3]\n    name: (statement_name [2, 0] - [2, 3])))\n"},
+    {"id":"malformed_expression","input":"DEFINE NAME=x VALUE={1 + * 2}","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 29]\n    name: (statement_name [0, 0] - [0, 6])\n    (parameter [0, 7] - [0, 13]\n      name: (parameter_name [0, 7] - [0, 11])\n      operator: (assignment_operator [0, 11] - [0, 12])\n      value: (character_value [0, 12] - [0, 13]))\n    (parameter [0, 14] - [0, 29]\n      name: (parameter_name [0, 14] - [0, 19])\n      operator: (assignment_operator [0, 19] - [0, 20])\n      value: (braced_expression [0, 20] - [0, 29]\n        (numeric_value [0, 21] - [0, 22])\n        (expression_operator [0, 23] - [0, 24])\n        (expression_operator [0, 25] - [0, 26])\n        (numeric_value [0, 27] - [0, 28])))))\n"},
+    {"id":"literal_title","input":"TITLE Device 😀 μ\r\nEND","exit":0,"errors":0,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [2, 0]\n  (title_statement [0, 0] - [0, 20]\n    name: (statement_name [0, 0] - [0, 5])\n    title: (title_text [0, 6] - [0, 20]))\n  (end_statement [1, 0] - [1, 3]\n    name: (statement_name [1, 0] - [1, 3])))\n"},
+    {"id":"keyword_prefix","input":"ENDPOINT X=1","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (ERROR [0, 0] - [0, 3]\n    (statement_name [0, 0] - [0, 3]))\n  (statement [0, 3] - [0, 12]\n    name: (statement_name [0, 3] - [0, 8])\n    (parameter [0, 9] - [0, 12]\n      name: (parameter_name [0, 9] - [0, 10])\n      operator: (assignment_operator [0, 10] - [0, 11])\n      value: (numeric_value [0, 11] - [0, 12]))))\n"},
+    {"id":"missing_separator","input":"GRID XMIN=0XMAX=1","exit":1,"errors":1,"missing":0,"unparsed_lines":0,"reference_nodes":0,"tree":"(source_file [0, 0] - [1, 0]\n  (statement [0, 0] - [0, 17]\n    name: (statement_name [0, 0] - [0, 4])\n    (ERROR [0, 5] - [0, 11]\n      (parameter [0, 5] - [0, 11]\n        name: (parameter_name [0, 5] - [0, 9])\n        operator: (assignment_operator [0, 9] - [0, 10])\n        value: (numeric_value [0, 10] - [0, 11])))\n    (parameter [0, 11] - [0, 17]\n      name: (parameter_name [0, 11] - [0, 15])\n      operator: (assignment_operator [0, 15] - [0, 16])\n      value: (numeric_value [0, 16] - [0, 17]))))\n"}
+  ]
+}
