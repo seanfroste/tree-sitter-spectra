@@ -6,3 +6,8 @@ build/
 *.so
 *.wasm
 .DS_Store
+
+# Pix Agent
+.pi/
+.pi-lens/
+.cache/pi/
