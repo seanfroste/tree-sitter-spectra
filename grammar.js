@@ -13,6 +13,26 @@ export default grammar({
   name: "spectra",
 
   extras: () => [],
+  word: ($) => $._word,
+  externals: ($) => [$.comment, $._missing_value, $._missing_close, $._error_sentinel],
+
+  conflicts: ($) => [
+    [$._value, $.function_call],
+    [$._argument, $.function_call],
+    [$._series_value, $.function_call],
+    [$.positional_argument, $.parameter],
+    [$._atom, $.function_call],
+    [$._expression, $._or_binary],
+    [$._or, $._and_binary],
+    [$._and, $._comparison_binary],
+    [$._comparison, $._sum_binary],
+    [$._sum, $._product_binary],
+    [$._power, $._power_binary],
+    [$._or_binary, $._and_binary],
+    [$._and_binary, $._comparison_binary],
+    [$._comparison_binary, $._sum_binary],
+    [$._sum_binary, $._product_binary],
+  ],
 
   rules: {
     source_file: ($) =>
@@ -20,6 +40,7 @@ export default grammar({
 
     _line: ($) =>
       choice(
+        $._hspace,
         $.comment,
         $.title_statement,
         $.if_statement,
@@ -30,8 +51,6 @@ export default grammar({
         $.statement,
         $.unparsed_line,
       ),
-
-    comment: () => token(prec(5, /[#$*][^\r\n]*/)),
 
     title_statement: ($) =>
       prec(
@@ -95,8 +114,8 @@ export default grammar({
         choice(
           seq(
             $._parameter_separator,
-            $.parameter,
-            repeat(seq($._parameter_separator, $.parameter)),
+            choice($.parameter, $.mask_group, $.positional_argument),
+            repeat(seq($._parameter_separator, choice($.parameter, $.mask_group, $.positional_argument))),
             optional($._hspace),
           ),
           prec(-2, optional($._hspace)),
@@ -108,11 +127,27 @@ export default grammar({
         3,
         seq(
           optional($._hspace),
-          $.parameter,
-          repeat(seq($._parameter_separator, $.parameter)),
+          choice($.parameter, $.mask_group),
+          repeat(seq($._parameter_separator, choice($.parameter, $.mask_group))),
           optional($._hspace),
         ),
       ),
+
+    positional_argument: ($) => alias($._word, $.character_value),
+
+    mask_group: ($) =>
+      seq(
+        optional(seq(field("operator", "&"), optional($._hspace))),
+        "[",
+        optional($._value_space),
+        choice($.parameter, $.mask_group),
+        repeat(seq($._value_separator, choice($.parameter, $.mask_group))),
+        optional($._value_space),
+        choice("]", alias($._missing_close, $.unparsed_line)),
+      ),
+
+    linked_series: ($) =>
+      seq(field("reference", $.variable_reference), field("values", $.parenthesized_series)),
 
     parameter: ($) =>
       seq(
@@ -125,9 +160,14 @@ export default grammar({
 
     _value: ($) =>
       choice(
+        alias($._missing_value, $.unparsed_line),
+        alias($._unfinished_string, $.unparsed_line),
         $.quoted_string,
         $.numeric_value,
         $.function_call,
+        $.variable_reference,
+        alias($._invalid_reference, $.unparsed_line),
+        $.linked_series,
         $.parenthesized_series,
         $.braced_expression,
         $.composite_value,
@@ -136,7 +176,10 @@ export default grammar({
       ),
 
     quoted_string: () =>
-      token(choice(/"([^"\\]|\\.)*"/, /'([^'\\]|\\.)*'/)),
+      token(choice(/"([^"\\\r\n]|\\[^\r\n])*"/, /'([^'\\\r\n]|\\[^\r\n])*'/)),
+
+    _unfinished_string: () =>
+      token(prec(-1, choice(/"([^"\\\r\n]|\\[^\r\n])*/, /'([^'\\\r\n]|\\[^\r\n])*/))),
 
     numeric_value: () =>
       token(
@@ -165,27 +208,13 @@ export default grammar({
       ),
 
     function_call: ($) =>
-      choice(
-        prec(
-          4,
-          seq(
-            field("name", alias($._word, $.function_name)),
-            "(",
-            optional(field("arguments", $.argument_list)),
-            ")",
-          ),
-        ),
-        prec(
-          -1,
-          seq(
-            field("name", alias($._word, $.function_name)),
-            $._hspace,
-            "(",
-            optional(field("arguments", $.argument_list)),
-            ")",
-          ),
-        ),
-      ),
+      prec.dynamic(1, seq(
+        field("name", alias($._word, $.function_name)),
+        optional($._hspace),
+        "(",
+        optional(field("arguments", $.argument_list)),
+        choice(")", alias($._missing_close, $.unparsed_line)),
+      )),
 
     argument_list: ($) =>
       seq(
@@ -203,6 +232,7 @@ export default grammar({
         $.braced_expression,
         $.parenthesized_series,
         $.variable_reference,
+        alias($._invalid_reference, $.unparsed_line),
         alias($._word, $.character_value),
         alias($._bare, $.character_value),
       ),
@@ -220,7 +250,7 @@ export default grammar({
               optional($._value_space),
             ),
           ),
-          ")",
+          choice(")", alias($._missing_close, $.unparsed_line)),
         ),
       ),
 
@@ -231,43 +261,77 @@ export default grammar({
         $.function_call,
         $.braced_expression,
         $.variable_reference,
+        alias($._invalid_reference, $.unparsed_line),
         alias($._word, $.character_value),
         alias($._bare, $.character_value),
       ),
 
     braced_expression: ($) =>
-      seq(
-        "{",
-        repeat(choice($._expression_item, $._expression_space)),
-        "}",
-      ),
+      seq("{", optional($._hspace), choice($._expression, $.formatted_expression), optional($._hspace),
+        choice("}", alias($._missing_close, $.unparsed_line))),
 
     condition: ($) =>
-      seq(
-        "[",
-        repeat(choice($._expression_item, $._expression_space)),
-        "]",
-      ),
+      seq("[", optional($._hspace), $._expression, optional($._hspace),
+        choice("]", alias($._missing_close, $.unparsed_line))),
 
-    _expression_item: ($) =>
-      choice(
-        $.braced_expression,
-        $.function_call,
-        $.numeric_value,
-        $.format_specifier,
-        $.variable_reference,
-        $.expression_operator,
-        alias($._word, $.identifier),
-        alias($._expression_bare, $.expression_fragment),
-      ),
+    formatted_expression: ($) =>
+      seq(field("format", $.format_specifier), alias(":", $.expression_operator),
+        optional($._expression_space), field("value", $._expression)),
+
+    _expression: ($) => $._or,
+    _or: ($) => choice($._and, alias($._or_binary, $.binary_expression)),
+    _or_binary: ($) => seq(
+      field("left", $._or), optional($._expression_space), field("operator", alias("||", $.expression_operator)),
+      optional($._expression_space), field("right", $._and)),
+    _and: ($) => choice($._comparison, alias($._and_binary, $.binary_expression)),
+    _and_binary: ($) => seq(
+      field("left", $._and), optional($._expression_space), field("operator", alias("&&", $.expression_operator)),
+      optional($._expression_space), field("right", $._comparison)),
+    _comparison: ($) => choice($._sum, alias($._comparison_binary, $.binary_expression)),
+    _comparison_binary: ($) => seq(
+      field("left", $._comparison), optional($._expression_space), field("operator", alias(choice("=", "==", "!=", "<", ">", "<=", ">="), $.expression_operator)),
+      optional($._expression_space), field("right", $._sum)),
+    _sum: ($) => choice($._product, alias($._sum_binary, $.binary_expression)),
+    _sum_binary: ($) => seq(
+      field("left", $._sum), optional($._expression_space), field("operator", alias(choice("+", "-"), $.expression_operator)),
+      optional($._expression_space), field("right", $._product)),
+    _product: ($) => choice($._unary, alias($._product_binary, $.binary_expression)),
+    _product_binary: ($) => seq(
+      field("left", $._product), optional($._expression_space), field("operator", alias(choice("*", "/", "\\"), $.expression_operator)),
+      optional($._expression_space), field("right", $._unary)),
+    _unary: ($) => choice($._power, $.unary_expression),
+    _power: ($) => choice($._atom, alias($._power_binary, $.binary_expression)),
+    _power_binary: ($) => seq(
+      field("left", $._atom), optional($._expression_space), field("operator", alias("^", $.expression_operator)),
+      optional($._expression_space), field("right", $._unary)),
+
+    _atom: ($) => choice(
+      $.braced_expression, $.parenthesized_expression, $.function_call,
+      alias($._expression_number, $.numeric_value), $.variable_reference,
+      alias($._invalid_reference, $.unparsed_line),
+      alias($._word, $.identifier), alias($._invalid_expression, $.unparsed_line)),
+
+    _invalid_expression: () => token(prec(-20, /[^}\])\r\n \t]+/)),
+
+    _expression_number: () =>
+      token(prec(4, /(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eEdDbB][+-]?[0-9]+)?/)),
+
+    parenthesized_expression: ($) =>
+      seq("(", optional($._hspace), $._expression, optional($._hspace),
+        choice(")", alias($._missing_close, $.unparsed_line))),
+
+    unary_expression: ($) =>
+      seq(field("operator", alias(choice("+", "-", "!"), $.expression_operator)),
+        optional($._expression_space), field("operand", $._unary)),
 
     format_specifier: () => token(prec(5, /%[-+0-9.#]*[A-Za-z]/)),
 
     variable_reference: () =>
-      token(prec(5, /[@#$]+[A-Za-z_][A-Za-z0-9_.]*/)),
+      token(prec(5, /(?:@|\$\$?|#)[A-Za-z_][A-Za-z0-9_.]*/)),
 
-    expression_operator: () =>
-      token(prec(5, /<=|>=|==|!=|\|\||&&|[+\-*\/\\^<>=:,%&!]/)),
+    _invalid_reference: () =>
+      token(prec(4, /[@$#]+[A-Za-z_][A-Za-z0-9_.]*/)),
+
 
     assignment_operator: () => "=",
 
@@ -280,12 +344,10 @@ export default grammar({
         ),
       ),
 
-    _word: () => token(/[A-Za-z_][A-Za-z0-9_.-]*/),
+    _word: () => token(/[A-Za-z_][A-Za-z0-9_.]*/),
 
     _bare: () => token(/[^\s,={}()\[\]'"<>]+/),
 
-    _expression_bare: () =>
-      token(/[^\s{}()\[\],+\-*\/\\^<>=:%&!]+/),
 
     _parameter_separator: ($) =>
       choice(
@@ -300,8 +362,8 @@ export default grammar({
       ),
 
     _value_space: ($) => repeat1(choice($._hspace, $._newline)),
+    _expression_space: ($) => repeat1(choice($._hspace, $._newline)),
 
-    _expression_space: ($) => choice($._hspace, $._newline, ","),
 
     _hspace: () => /[ \t]+/,
 

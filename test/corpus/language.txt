@@ -30,9 +30,10 @@ END
       (parameter_name)
       (assignment_operator)
       (braced_expression
-        (variable_reference)
-        (expression_operator)
-        (numeric_value)))
+        (binary_expression
+          (variable_reference)
+          (expression_operator)
+          (numeric_value))))
     (parameter
       (parameter_name)
       (assignment_operator)
@@ -87,9 +88,10 @@ END
   (if_statement
     (statement_name)
     (condition
-      (variable_reference)
-      (expression_operator)
-      (numeric_value)))
+      (binary_expression
+        (variable_reference)
+        (expression_operator)
+        (numeric_value))))
   (statement
     (statement_name)
     (parameter

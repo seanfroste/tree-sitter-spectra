@@ -97,11 +97,13 @@ NFERMI AXIS=-Y NAME=pd-LT
       value: (composite_value
         (character_fragment)
         (braced_expression
-          (format_specifier)
-          (expression_operator)
-          (variable_reference)
-          (expression_operator)
-          (numeric_value))
+          (formatted_expression
+            format: (format_specifier)
+            (expression_operator)
+            value: (binary_expression
+              left: (variable_reference)
+              operator: (expression_operator)
+              right: (numeric_value))))
         (character_fragment)))
     (parameter
       name: (parameter_name)
@@ -155,14 +157,16 @@ BIAS ERROR={atan2(@y,{max(@x,1)})*180/PI}
           (numeric_value)
           (numeric_value)
           (braced_expression
-            (expression_operator)
-            (numeric_value)
-            (expression_operator)
-            (function_call
-              name: (function_name)
-              arguments: (argument_list
-                (variable_reference)
-                (numeric_value))))
+            (binary_expression
+              left: (unary_expression
+                operator: (expression_operator)
+                operand: (numeric_value))
+              operator: (expression_operator)
+              right: (function_call
+                name: (function_name)
+                arguments: (argument_list
+                  (variable_reference)
+                  (numeric_value)))))
           (numeric_value)
           (numeric_value)))))
   (statement
@@ -171,20 +175,22 @@ BIAS ERROR={atan2(@y,{max(@x,1)})*180/PI}
       name: (parameter_name)
       operator: (assignment_operator)
       value: (braced_expression
-        (function_call
-          name: (function_name)
-          arguments: (argument_list
-            (variable_reference)
-            (braced_expression
-              (function_call
-                name: (function_name)
-                arguments: (argument_list
-                  (variable_reference)
-                  (numeric_value))))))
-        (expression_operator)
-        (numeric_value)
-        (expression_operator)
-        (identifier)))))
+        (binary_expression
+          left: (binary_expression
+            left: (function_call
+              name: (function_name)
+              arguments: (argument_list
+                (variable_reference)
+                (braced_expression
+                  (function_call
+                    name: (function_name)
+                    arguments: (argument_list
+                      (variable_reference)
+                      (numeric_value))))))
+            operator: (expression_operator)
+            right: (numeric_value))
+          operator: (expression_operator)
+          right: (identifier))))))
 
 ==================
 IF ELSE ENDIF and column-one comments
@@ -210,9 +216,10 @@ ENDIF
   (if_statement
     name: (statement_name)
     condition: (condition
-      (variable_reference)
-      (expression_operator)
-      (numeric_value)))
+      (binary_expression
+        left: (variable_reference)
+        operator: (expression_operator)
+        right: (numeric_value))))
   (statement
     name: (statement_name)
     (parameter
