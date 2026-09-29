@@ -32,7 +32,7 @@ try {
   if (changed) throw new Error('Regenerate and review generated parser artifacts');
   run('tree-sitter', ['test']);
   run('go', ['test', '-count=1', './...']);
-  run('cargo', ['test']);
+  run('cargo', ['test', '--locked']);
   console.log('\nVerification passed: reproducible parser, corpus, reviewed sources, fixtures, queries, Go editor adapter, Rust consumer binding.');
 } catch (error) {
   console.error(error.message);

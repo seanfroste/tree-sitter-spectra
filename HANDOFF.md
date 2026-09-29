@@ -10,7 +10,7 @@ One Tree-sitter grammar lives in `grammar.js`; hand-written recovery scanner liv
 
 Go API under `bindings/go` provides `Language`, `Analyze`, `ResolveIncludes`, `PositionAt`, and `ByteOffset`. Contract version 1 is documented in `docs/development/adapter-contract.md`. Reviewed executable documentation cases are in `test/documentation.json`; historical source screening is preserved in `docs/development/completeness-baseline.json`. The syntax matrix is `docs/development/syntax-coverage.md`.
 
-Run `npm ci`, then `npm run verify`. The gate runs generation reproducibility, Tree-sitter corpus, Go tests, and Rust tests. Requirements and development coverage are in `docs/development/completeness-design.md`, `docs/development/completeness-plan.md`, and `docs/development/completeness.md`.
+Run `npm ci`, then `npm run verify`. The gate runs generation reproducibility, Tree-sitter corpus, Go tests, and `cargo test --locked`. Commit `Cargo.lock` for reproducible Rust test dependencies. Requirements and parser coverage are in `docs/development/completeness-design.md`, `docs/development/completeness-plan.md`, and `docs/development/completeness.md`.
 
 ## Verified here
 
@@ -24,6 +24,11 @@ Direct CLI parses proved multiline expression structure, local recovery before a
 - Review any new documentation or consumer requirements against the source-linked oracle. Add a failing behavioral test before changes.
 - Keep the generated ABI 15 parser reproducible. `scripts/verify.mjs` compares regenerated files byte for byte.
 - Validate the future Go LSP in its own repository. This parser is not an integrated LSP or proof of full simulator compatibility.
+## Future Go LSP migration
+
+Planned migration identifiers are repository `seanfroste/tree-sitter-spectra`, parser tag `v0.1.0`, and sibling branch `migration/go-tree-sitter`. Preserve them unless a newer approved plan replaces them. Parser node names are public release contract.
+
+Use historical Go and current Rust implementations as behavior oracles, not code to restore wholesale. Preserve SPECTRALS stdio, executable, configuration, capability, and public-name contracts. Keep protocol conversion and gating outside analysis. Future Go analysis consumes stable interfaces; spec generator owns documentation tables and supplemental metadata owns abbreviation minima. Use typed feature outputs and explicit document lifecycle. Remove old Rust implementation only after complete Go parity and release builds.
 
 ## Repository hygiene
 
