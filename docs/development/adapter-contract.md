@@ -1,0 +1,19 @@
+# Syntax and semantic adapter contract, version 1
+
+`bindings/go.Analyze(root, source)` accepts a `source_file` root parsed from exactly `source` bytes. `AdapterContractVersion` identifies this contract. Returned `Analysis` owns strings, keeps half-open byte ranges, and holds no syntax-tree pointers. `PositionAt` and `ByteOffset` convert source byte boundaries to zero-based LSP UTF-8 or UTF-16 character units. Invalid UTF-8, split runes, CRLF interiors, unsupported encodings, and out-of-range positions return errors. LF and CRLF terminate lines; a lone CR remains a character. Preserve input bytes when converting positions.
+
+## Ownership and source retention
+
+A statement's `Parts` contains its syntactic line and owned `continuation_line` nodes. Comments and whitespace do not break ownership and do not enter `Parts`. A malformed physical line or `unparsed_line` breaks ownership; an orphan continuation has its own diagnostic. `Range` spans owned parts, including gaps, while `NameRange` and parameter ranges remain exact source bytes. `END` remains a syntax node and makes later statements inactive; the adapter never deletes trailing text. Syntax ERROR, MISSING and fallback nodes yield diagnostics. Consumer-facing unknown-name warnings do not assert historical simulator rejection.
+
+Flat IF/ELSE/ENDIF nodes yield matched `Conditional` indices, duplicate/unmatched diagnostics, and unclosed-IF diagnostics at END or end of file. Conditions are not executed. Aliases and abbreviations are canonicalized only for catalogue lookups; original spelling and byte ranges survive. Statement aliases: `CONST`, `CONV`, `DEPO`, `STRUCT`, `SUBS`. Parameter abbreviations are enumerated in `bindings/go/analysis.go`; accepted prefixes are not guessed. `docs/*.md` parameter tables define the local catalogue, not a complete unavailable simulator specification. User DEFINE/EXTRACT declaration names retain case. Repeated DEFINE NAME and EXTRACT PARAMETER groups remain distinct, indexed from zero.
+
+`@name` is a numeric reference, `$name` and `$$name` character references, `#name` extracted or linked references. Other repeated or mixed sigil prefixes are syntax errors, not references. Linked `#name(series)` sets `Linked`. Reference records retain full and name-only ranges, statement/parameter ownership, and activity. Syntax discovery does not prove name resolution or numerical evaluation. `INSERT FILE` and `DEFINE FILE` are include candidates. Literal paths resolve relative to containing document through `ResolveIncludes`; symbolic paths remain unresolved; missing files and non-regular targets return explicit errors. Output/data FILE parameters are not treated as includes.
+
+## Consumer boundary
+
+Sibling `../spectrals` currently has its own Rust lexer and parser. Its `Statement` and `Argument` model, declaration/reference navigation, hover/completion, diagnostics, document symbols, and position conversion are implemented there. The planned consumer is a **new Go LSP codebase**, not a Rust adapter: consume a release tag of this module and use its Go `Language`, `Analyze`, `ResolveIncludes`, `PositionAt`, and `ByteOffset` APIs. Existing Rust binding tests remain useful cross-binding checks but do not define the future consumer. No migration of the sibling server has occurred. Parser completeness here must not be described as finished integration into that server. Go consumers must translate Tree-sitter byte ranges to negotiated LSP position encoding; never treat byte columns as UTF-16 columns.
+
+## Known boundary
+
+This adapter is a repository-specification reference implementation, not an LSP transport or simulator. It does not evaluate expressions, resolve every symbolic file name, load includes recursively, or claim an unavailable numerical function catalogue. The planned Go LSP migration requires end-to-end editor behavior tests in `../spectrals` before claiming LSP integration. This repository does not modify that sibling.

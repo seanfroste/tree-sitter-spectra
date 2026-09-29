@@ -4,8 +4,7 @@
 //! tree-sitter [`Parser`], and then use the parser to parse some code:
 //!
 //! ```
-//! let code = r#"
-//! "#;
+//! let code = "DEFINE NAME=Width VALUE=1\nSAVE FILE={$Width}.dat\n";
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_spectra::LANGUAGE;
 //! parser
@@ -49,12 +48,4 @@ pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
 
 #[cfg(test)]
-mod tests {
-    #[test]
-    fn test_can_load_grammar() {
-        let mut parser = tree_sitter::Parser::new();
-        parser
-            .set_language(&super::LANGUAGE.into())
-            .expect("Error loading Spectra parser");
-    }
-}
+mod consumer_tests;
