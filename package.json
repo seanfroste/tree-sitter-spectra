@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "generate": "tree-sitter generate --abi 15",
-    "test": "tree-sitter test"
+    "test": "tree-sitter test",
+    "verify": "node scripts/verify.mjs"
   },
   "devDependencies": {
     "tree-sitter-cli": "0.27.0"

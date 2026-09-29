@@ -1,13 +1,30 @@
 # SPECTRA parser completeness and LSP readiness
 
-Assessed 2026-09-13 against `fc7276efec0be7715e14bb347b4b180dbf36df04`.
-This is an assessment and a development goal, not a claim that the goal has been reached.
+Assessment initiated 2026-09-13 against `fc7276efec0be7715e14bb347b4b180dbf36df04`. The original measured baseline below remains historical.
 
-## Verdict
+The current implementation has independent grammar and adapter review plus a passing local verification gate. Historical baseline findings below are not current behavior; CI on another machine and Go LSP integration remain separate checks.
 
-The parser is a useful foundation for an LSP prototype and syntax highlighting, but **not yet a complete documented-language parser or a reliable LSP syntax backend**. It recognizes common statements, parameters, numeric values, strings, function calls without intervening spaces, series, interpolation and basic conditional markers. Significant valid syntax, reference classification and error-recovery behavior remain incomplete.
+## Current repository-specification evidence (2026-09-29)
 
-Do not assign a single overall completeness percentage. Passing the current corpus, structurally accepting a documentation sample, recognizing the intended values and supporting editor operations are different measurements.
+The measured baseline below describes the 2026-09-13 parser, not current behavior. The [approved completion design](completeness-design.md) defines the reviewed repository-specification boundary, and [source review policies](documentation-policies.md) distinguish corrected examples and local decisions from historical simulator claims.
+
+`npm run verify` currently runs ABI 15 generation reproducibility, 10/10 corpus cases, a Go gate over all 138 documented candidates plus an executable END minimum, all checked-in `.in` fixtures, highlight-query reference recognition, Go semantic/editor tests, and Rust binding tests. Go tests inspect parameter fields, ordered argument spans, references, source ranges, fallback/error nodes, declarations, continuation ownership, editor edits, and UTF-8/UTF-16 positions. The [syntax matrix](syntax-coverage.md) links families to positive and invalid regressions. [Adapter contract version 1](adapter-contract.md) defines the Go semantic boundary and names the separate Go LSP migration gap.
+
+Measured on `seanf@GEYSER`, Windows/amd64, AMD Ryzen 7 4800H, a 131,037-byte, 1,000-block benchmark (`go test ./bindings/go -run '^$' -bench '^BenchmarkEditorParse$' -benchtime=5x -count=1`) gave fresh parsing 45.2 ms/op and incremental middle-document edits 182.9 ms/op. The latter is slower; incremental parsing has no speedup claim. The 2-second per-operation CI smoke budget checks regressions, not editor responsiveness. Parser integration into the sibling `../spectrals` LSP has **not** happened: that server still invokes its own Rust lexer/parser. Planned migration is a Go LSP consuming a tagged release of this module, so Go adapter and editor guarantees are the target contract. This parser's repository-document coverage is not full historical simulator compatibility or LSP server readiness.
+
+## Current evidence assessment
+
+The baseline defects below describe the 2026-09-13 parser only. The current implementation has targeted evidence for the former gaps, documented in the completion design, syntax matrix, and adapter contract. Review also added regressions for multiline expressions, incomplete-series recovery before TITLE, and rejection of unsupported reference sigils.
+
+Current `npm run verify` passed on Windows/amd64, 2026-09-29: ABI 15 generated output reproducibility, 10 corpus tests, 139 reviewed oracle cases including END minimum, checked-in fixtures, query captures, Go adapter/editor tests, and Rust binding tests. Re-run after later source changes.
+
+Measured workstation benchmark remains 45.2 ms fresh parse and 182.9 ms incremental edit on 131,037-byte input. Incremental parse is slower in that measurement. The two-second test limit is smoke protection, not a responsiveness claim.
+
+Repository-specification work covers approved examples and adapter behavior, not full historical simulator compatibility or Go LSP integration. Sibling `../spectrals` still uses its Rust parser.
+
+## Historical verdict and measured baseline
+
+This section records 2026-09-13 findings. These findings are not a current parser assessment.
 
 ## Measured baseline
 
@@ -62,7 +79,7 @@ Screening removes example labels and presentation indentation, omits identified 
 
 Format templates are not executable examples. Five other fenced blocks illustrate Fortran-like loop expansion, mathematical indexing or C programs for external data-file layouts. They are recorded separately, not claimed as SPECTRA input. External impurity/light/recombination data formats are not the `.in` grammar's syntax.
 
-## Confirmed gaps
+## Historical confirmed gaps
 
 ### P0: supported-looking syntax is not reliably recognized
 
@@ -147,16 +164,14 @@ Durable project initiative: `lsp-ready-spectra-parser-with-complete-documented-e
 | M4 | Harden editing and integration | Local recovery, binding-level parsing and incremental equivalence, ranges/position conversion, and measured larger-file performance. |
 | M5 | Enforce the complete gate | One repeatable command and CI, zero unresolved executable-example gaps, reproducible parser artifacts and a reviewed coverage matrix. |
 
-### Approach options
+### Historical approach options
 
 - **Minimal adapter over the current tree:** quickest for an LSP experiment, but cannot responsibly claim complete recognition while valid syntax and recovery failures remain.
 - **Focused grammar completion plus a semantic adapter (recommended):** fix syntax/classification/recovery in this repo and keep statement catalogues, name resolution and simulation rules outside grammar productions. This avoids reparsing opaque text in the LSP while keeping grammar complexity controlled.
 - **Statement-specific grammar and a fully structured AST:** stronger built-in structure, but greater coupling to the statement/alias catalogue and a larger compatibility change. Use only where the LSP contract demonstrates a need.
 
-This assessment does not implement any of these approaches. M1 and agreement on the syntax/semantic boundary are the next work items. Full LSP transport/server implementation is outside this parser-completeness goal.
+The 2026-09-13 assessment selected no implementation option. Full LSP transport/server implementation remains outside this parser-completeness scope.
 
-## Rechecking the evidence
+## Historical screening archive
 
-Run `npm test`, `go test -count=1 ./...`, and parse all fixture paths with the installed Tree-sitter CLI. The fixture check must also inspect tree output for unexpected fallback nodes and assert recognition, which the current npm script does not do.
-
-For each entry in `completeness-baseline.json`, write its `input` plus LF to a temporary `.in` file, run `node_modules/tree-sitter-cli/tree-sitter.exe parse <file>` from this repository, and compare only structural outcomes to this historical baseline. The original probe process did not change grammar, generated parser or tests. A future regression runner must use reviewed expected semantics rather than blessing this baseline's behavior.
+The earlier structural screening is archived in `completeness-baseline.json`. Run `npm run verify` for current parser checks; it uses reviewed semantic expectations from `test/documentation.json`, not baseline parse results.
