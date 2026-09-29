@@ -1,6 +1,11 @@
 .superpowers/
 node_modules/
 build/
+target/
+Cargo.lock
+
+# Portable skill archives are local distribution artifacts.
+*.skill
 *.dll
 *.dylib
 *.so
