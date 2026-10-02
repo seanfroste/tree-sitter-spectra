@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-spectra
 HOMEPAGE_URL := https://github.com/seanfroste/tree-sitter-spectra
-VERSION := 0.1.0
+VERSION := 0.1.1
 DESCRIPTION := Tree-sitter grammar for the SPECTRA input language
 
 # repository

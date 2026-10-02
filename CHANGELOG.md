@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-03
+
+### Fixed
+
+- Declare native Node build and loader dependencies directly so isolated,
+  non-hoisted package installations work.
+
+### Added
+
+- Node consumer tests for declaration fields, END source retention, and
+  shipped highlight-query captures, included in the canonical verification gate.
+
 ## [0.1.0] - 2026-10-03
 
 ### Added
@@ -20,5 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reproducible verification across documented examples, fixtures, corpus,
   queries, Go editor tests, and Rust binding tests.
 
-[Unreleased]: https://github.com/seanfroste/tree-sitter-spectra/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/seanfroste/tree-sitter-spectra/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/seanfroste/tree-sitter-spectra/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/seanfroste/tree-sitter-spectra/releases/tag/v0.1.0

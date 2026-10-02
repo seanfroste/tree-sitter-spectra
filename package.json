@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-spectra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tree-sitter grammar for the SPECTRA input language",
   "license": "MIT",
   "author": "seanfroste",

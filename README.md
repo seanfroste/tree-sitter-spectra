@@ -8,7 +8,7 @@ and Rust and Node bindings.
 The Go module is `github.com/seanfroste/tree-sitter-spectra`:
 
 ```sh
-go get github.com/seanfroste/tree-sitter-spectra@v0.1.0
+go get github.com/seanfroste/tree-sitter-spectra@v0.1.1
 ```
 
 Go consumers need a C compiler and Tree-sitter's `go-tree-sitter` v0.25.0.
@@ -21,7 +21,7 @@ To vendor the parser source as a Git submodule:
 ```sh
 git submodule add https://github.com/seanfroste/tree-sitter-spectra.git \
   third_party/tree-sitter-spectra
-git -C third_party/tree-sitter-spectra checkout v0.1.0
+git -C third_party/tree-sitter-spectra checkout v0.1.1
 ```
 
 Tree-sitter CLI and Node.js are needed for grammar generation, not ordinary
