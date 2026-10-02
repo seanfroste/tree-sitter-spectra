@@ -31,9 +31,10 @@ try {
   }
   if (changed) throw new Error('Regenerate and review generated parser artifacts');
   run('tree-sitter', ['test']);
+  run('node', ['--test', 'bindings/node/binding_test.js']);
   run('go', ['test', '-count=1', './...']);
   run('cargo', ['test', '--locked']);
-  console.log('\nVerification passed: reproducible parser, corpus, reviewed sources, fixtures, queries, Go editor adapter, Rust consumer binding.');
+  console.log('\nVerification passed: reproducible parser, corpus, reviewed sources, fixtures, queries, Node consumer binding, Go editor adapter, Rust consumer binding.');
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;

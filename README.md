@@ -55,7 +55,8 @@ npm run verify
 Generated parser and binding files are committed. Regenerate them after every
 grammar change. `npm run verify` checks reproducible generation, corpus, 139
 reviewed executable cases, all checked-in `.in` fixtures, highlight query
-recognition, Go adapter/editor tests, and Rust binding tests. Do not commit
+recognition, Node binding parsing/highlight tests, Go adapter/editor tests,
+and Rust binding tests. Do not commit
 test-run output or local build directories.
 
 ## Completeness and LSP readiness
