@@ -24,12 +24,17 @@ Rust binding tests. Preserve original examples and historical inventory; the
 approved design, plan, assessment, source policies, and syntax matrix remain
 maintained project evidence, not disposable handoff artifacts.
 
-## Release work in progress
+## Published release
 
-Target: `v0.1.0`; selected license: MIT. The release candidate is in progress;
-it is not published until the verified source, tag, public visibility, and
-GitHub release exist. The parser is not a completed Go LSP or proof of full
-historical simulator compatibility.
+`v0.1.0` is published under MIT at
+https://github.com/seanfroste/tree-sitter-spectra/releases/tag/v0.1.0.
+Release commit `697cf474b868b92f22e22aa8d75132feb3fac38b` passed
+`npm run verify`. A clean Go consumer fetched the versioned module and parsed
+`TITLE`/`END` through `Analyze`; a clean clone of the tag passed
+`go test ./bindings/go`.
+
+This parser is not an integrated Go LSP or proof of full historical simulator
+compatibility.
 
 The sibling migration identifiers remain repository
 `seanfroste/tree-sitter-spectra`, parser tag `v0.1.0`, and branch
