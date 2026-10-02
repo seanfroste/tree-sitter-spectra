@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
 requires = [ "setuptools>=62.4.0", "wheel" ]
 
 [project]
-authors = [ { email = "PARSER_AUTHOR_EMAIL", name = "seanfroste" } ]
+authors = [ { name = "seanfroste" } ]
 classifiers = [
   "Intended Audience :: Developers",
   "Topic :: Software Development :: Compilers",
@@ -12,7 +12,7 @@ classifiers = [
 ]
 description = "Tree-sitter grammar for the SPECTRA input language"
 keywords = [ "incremental", "parsing", "tree-sitter", "spectra" ]
-license.text = "UNLICENSED"
+license.text = "MIT"
 name = "tree-sitter-spectra"
 readme = "README.md"
 requires-python = ">=3.10"
